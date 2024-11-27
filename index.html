@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipo Estrella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" href="web_app/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="web_app/style.css">
+</head>
+
+<body>
+  <header class="columnAlignCenter">
+    <div>
+      <img src="web_app/imagenes/logo.svg" alt="Logo equipo estrella" />
+    </div>
+    <nav>
+      <ul>
+        <li><button onclick="paginaCrearEquipo()">Crear un Equipo</button></li>
+        <li><button onclick="paginaMisEquipos()">Mis Equipos</button></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="columnAlignCenter">
+    <section id="introduccion" class="columnAlignCenter">
+      <img src="web_app/imagenes/Banner-Principal.webp" alt="Banner Principal Equipo Estrella">
+      <div class="columnAlignCenter">
+        <h1>¡Bienvenido a Equipo Estrella! ⚽🌟</h1>
+        <p>
+          ¿Tienes lo que se necesita para construir el equipo de fútbol perfecto? Elige jugadores de distintas ligas,
+          combina talentos únicos, ajusta estrategias y enfrenta desafíos para demostrar tu capacidad como entrenador.
+          Ya sea que busques velocidad, precisión o trabajo en equipo, aquí comienza tu camino hacia la alineación
+          estrella.
+        </p>
+        <p>
+          <strong>
+            ¡El terreno de juego te espera! Construye, compite y demuestra que tu equipo es el mejor. 🚀
+          </strong>
+        </p>
+        <button id="btnEmpezar" class="botonPrimario">Empezar</button>
+      </div>
+    </section>
+    <section id="crearEquipo" class="columnAlignCenter">
+      <form id="formEquipoEstrella">
+        <div id="seccionManager" class="seccionManager">
+          <h2>Crea a tu Manager</h2>
+          <div class="filaForm">
+            <div>
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre">
+              <p id="errorNombre" class="error"></p>
+            </div>
+            <div>
+              <label for="apellido">Apellido</label>
+              <input type="text" id="apellido">
+              <p id="errorApellido" class="error"></p>
+            </div>
+          </div>
+          <div class="filaForm">
+            <div>
+              <label for="edad">Edad</label>
+              <input type="number" id="edad" min="1" max="100">
+              <p id="errorEdad" class="error"></p>
+            </div>
+            <div class="vestimenta">
+              <p>Vestimenta</p>
+              <div>
+                <div>
+                  <input type="radio" name="vestimenta" id="traje" value="traje">
+                  <label for="traje">Traje</label>
+                </div>
+                <div>
+                  <input type="radio" name="vestimenta" id="remera" value="remera">
+                  <label for="remera">Remera</label>
+                </div>
+              </div>
+              <p id="errorVestimenta" class="error"></p>
+            </div>
+          </div>
+          <div class="filaForm">
+            <div id="avatarContainer" class="avatar">
+              <p>Avatar</p>
+              <button type="button" id="elegirAvatar" class="botonSecundario">Elegir avatar</button>
+              <p id="errorAvatar" class="error"></p>
+            </div>
+            <button type="button" id="btnManager" class="botonPrimario">Siguiente paso</button>
+          </div>
+        </div>
+        <div id="seccionEquipo" class="columnAlignCenter">
+          <h2>Crea tu Equipo</h2>
+          <div id="elegirFormacion">
+            <p>Para poder seleccionar a tus jugadores, elige una formación.</p>
+            <div class="filaForm">
+              <div class="formacionContainer">
+                <label for="formacion">Formación</label>
+                <select id="formacion">
+                  <option value="">Seleccione</option>
+                  <option value="1">4-3-3</option>
+                  <option value="2">4-4-2</option>
+                  <option value="3">4-1-2-1-2</option>
+                </select>
+                <p id="errorFormacion" class="error"></p>
+              </div>
+              <button type="button" id="confirmarFormacion" class="botonPrimario">Confirmar formación</button>
+            </div>
+          </div>
+          <div id="elegirJugadores">
+            <div class="canchaContainer columnAlignCenter">
+              <p class="explicacion">Aprete uno de los circulos amarillos para seleccionar al jugador de esa posición
+              </p>
+              <div id="cancha" class="cancha">
+                <div class="porteria">
+                  <div id="por" class="portero">
+                    <button type="button">POR</button>
+                  </div>
+                </div>
+                <div class="defensa">
+                  <div id="li" class="lateralIzquierdo">
+                    <button type="button">LI</button>
+                  </div>
+                  <div id="dfci" class="centralIzquierdo">
+                    <button type="button">DFC</button>
+                  </div>
+                  <div id="dfcd" class="centralDerecho">
+                    <button type="button">DFC</button>
+                  </div>
+                  <div id="ld" class="lateralDerecho">
+                    <button type="button">LD</button>
+                  </div>
+                </div>
+                <div id="mediocampo" class="mediocampo"></div>
+                <div id="delantera" class="delantera"></div>
+              </div>
+            </div>
+            <div class="finalEquipo">
+              <button type="submit" id="btnEquipo" class="botonPrimario">Terminar Equipo</button>
+              <p id="errorEquipo" class="error"></p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+    <section id="misEquiposContainer" class="columnAlignCenter">
+      <h2>Mis Equipos</h2>
+      <div id="misEquiposEstrellas" class="misEquiposEstrellas"></div>
+    </section>
+    <div id="modalOverlay" class="modalOverlay">
+      <div class="modal">
+        <button onclick="cerrarModal()" class="cruzModal">X</button>
+        <div id="contenidoModal"></div>
+      </div>
+    </div>
+  </main>
+  <footer class="columnAlignCenter">
+    <button onclick="modalFooter()" class="botonPrimario">Información de Lucas Bernath</button>
+  </footer>
+  <script src="web_app/main.js"></script>
+</body>
+
+</html>
