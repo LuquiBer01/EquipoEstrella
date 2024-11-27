@@ -7,4 +7,4 @@ Turno: Mañana
 Apellido y Nombre del Alumno: Bernath Lucas
 Apellido y Nombre del Docente: Toyos Omar
 Instancia de Evaluación: Segundo Parcial
-Url: 
+Url: https://luquiber01.github.io/EquipoEstrella/
